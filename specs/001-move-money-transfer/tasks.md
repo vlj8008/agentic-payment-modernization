@@ -36,7 +36,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T008 [P] Create `TransferType` (`INT_BRKBNK`, `INT_RETBRK`, `ACH`, `WIRE`) and `TransferStatus` (`00`, `10`, `20`, `30`, `90`, `PENDING_SETTLEMENT_RETRY`) enums in `src/main/java/com/movemoney/transfer/model/`
+- [x] T008 [P] Create `TransferType` (`INT_BRKBNK`, `INT_RETBRK`, `ACH`, `WIRE`) and `TransferStatus` (`00`, `10`, `20`, `30`, `90`, `PENDING_SETTLEMENT_RETRY`) enums in `src/main/java/com/movemoney/transfer/model/`
 - [ ] T009 [P] Create encapsulated `Account` entity (`private` balance with `BigDecimal`, `private boolean isActive` soft-delete flag, and `getMaskedAccountNumber()`) in `src/main/java/com/movemoney/transfer/model/Account.java`
 - [ ] T010 [P] Create `TransferRequest`, `TransferResult`, `AuditLogEntry`, and `TransferEvent` records in `src/main/java/com/movemoney/transfer/model/`
 - [ ] T011 [P] Create decoupled `AccountRepository` interface and seeded `InMemoryAccountRepository` in `src/main/java/com/movemoney/transfer/repository/`
