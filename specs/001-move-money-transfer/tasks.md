@@ -127,7 +127,8 @@
 **Purpose**: Expose the versioned enterprise REST endpoint (`POST /api/v1/transfers`) and verify the full JUnit 5 parity test suite.
 
 - [ ] T025 Implement `TransferController` (`POST /api/v1/transfers` with `Idempotency-Key` header) in `src/main/java/com/movemoney/transfer/controller/TransferController.java`
-- [ ] T026 Execute full JUnit 5 parity test suite and build check, then halt with `[WAITING FOR MANUAL VERIFICATION]` per Principle VI
+- [ ] T026 [P] Create GitHub Actions CI workflow in `.github/workflows/ci.yml` (JDK 21, `mvn test`, triggered on pull requests and pushes to `main`)
+- [ ] T027 Execute full JUnit 5 parity test suite, confirm the GitHub Actions CI check is green on the pull request, then halt with `[WAITING FOR MANUAL VERIFICATION]` per Principle VI
 
 ---
 
