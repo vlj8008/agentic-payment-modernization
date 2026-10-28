@@ -18,7 +18,7 @@ Modernize the legacy mainframe COBOL payment movement program ([`legacy-mainfram
 
 **Storage**: Seeded **In-Memory Data Store** (`ConcurrentHashMap` state behind decoupled `AccountRepository`, `TransferRepository`, and `AuditLogRepository` interfaces). **No external database connection is required** for normal operation or JUnit parity testing, while allowing future integration with SQL Server or PostgreSQL without modifying business logic (SOLID Dependency Inversion).
 
-**Testing**: JUnit 5 (`jupiter`) — 100% legacy mainframe input/output parity test suite (`TransferServiceParityTest`)
+**Testing**: JUnit 5 (`jupiter`) — 100% legacy mainframe input/output parity test suite (`TransferServiceParityTest`), run automatically on every pull request by a GitHub Actions workflow (Java 21 + `mvn test`)
 
 **Target Platform**: Local JVM / Pivotal Cloud Foundry (PCF) runtime with GitHub Actions CI/CD
 
@@ -70,6 +70,10 @@ specs/001-move-money-transfer/
 
 legacy-mainframe/
 └── XFERPROC.cbl                                     # Legacy Mainframe COBOL Source Program
+
+.github/
+└── workflows/
+    └── ci.yml                                       # GitHub Actions CI: build + run JUnit parity tests on every PR
 
 src/
 ├── main/java/com/movemoney/transfer/
